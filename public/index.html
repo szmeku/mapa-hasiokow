@@ -1016,8 +1016,13 @@
       }, {"lat": 50.2799039, "lng": 19.006037}, {"lat": 50.28015389999999, "lng": 19.005817}],
 
       map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
+        zoom: 12,
         center: locations[0]
+      }),
+
+      marker = new google.maps.Marker({
+        map: map,
+        position: locations[0]
       }),
 
       heatmap = new google.maps.visualization.HeatmapLayer({
@@ -1041,6 +1046,24 @@
           return new google.maps.LatLng(v.lat, v.lng)
         })
       });
+
+    if (navigator.geolocation) {
+
+      setInterval(function () {
+
+      }, 2000);
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        marker.setPosition(pos);
+      }, function () {
+      });
+    }
+
     heatmap.setMap(map);
   };
 
