@@ -1051,17 +1051,17 @@
 
       setInterval(function () {
 
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          marker.setPosition(pos);
+        }, function () {});
+
       }, 2000);
 
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        marker.setPosition(pos);
-      }, function () {
-      });
     }
 
     heatmap.setMap(map);
