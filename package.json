@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "streets.js",
+  "engines": {
+    "node": "8.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +15,9 @@
     "aws-sdk": "^2.275.1",
     "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
+    "http-server": "^0.11.1",
     "moment": "^2.22.2",
+    "mongo-tools": "^1.0.0",
     "mongodb": "^3.1.1",
     "node-fetch": "^2.1.2",
     "ramda": "^0.25.0",
