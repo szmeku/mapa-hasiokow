@@ -18,12 +18,12 @@ const _ = require('ramda'),
 Schedules.then(Schedules => {
 
   Schedules
-    .find({dates: {$elemMatch: {$gt: new Date('2018-07-23'), $lt: new Date('2018-07-25')}}})
+    .find({dates: {$elemMatch: {$gt: new Date('2018-07-24'), $lt: new Date('2018-07-26')}}})
     .toArray()
     .then(map({concurrency: 1}, _.pipe(
       scheduleToAddressString,
       locationByAddress
     )))
-    .then(locations => fs.appendFile('locations_for_2018-07-24.json', JSON.stringify(locations)));
+    .then(locations => fs.appendFile('locations_for_2018-07-25.json', JSON.stringify(locations)));
 
 });
