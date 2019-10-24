@@ -1,5 +1,6 @@
 {
-  "mongoUrl": ""
+  "mongoUrl": "mongodb://10.0.75.1:27017/hasioki",
+  "googleApiKeys":{"harmonogramBackendKey": "googleToken"}
 }
 
 

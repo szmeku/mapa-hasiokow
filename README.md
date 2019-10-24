@@ -1,3 +1,9 @@
+## How to setup mapa hasiokow
+
+1. Run mongo locally
+docker run --name hasioki --rm -d -p 27017:27017 mongo
+2. Copy config-example.json to config.json and put your google token
+
 ## Create new unique mongodb index
 db.createCollection('schedules');
 db.schedules.createIndex( { "hash": 1 }, { unique: true } );
@@ -10,4 +16,3 @@ db.schedules.aggregate([
 
 ## how to update field without removing other
 db.collection.update(  { _id:...} , { $set: {location: 'something'} }
-
